@@ -13,12 +13,15 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -31,7 +34,9 @@ import com.google.gson.Gson;
 
 import org.eclipse.paho.client.mqttv3.MqttException;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -50,10 +55,12 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
 
     private Button arrow_down,arrow_up;
 
-    private Button lightDelete,curtainDelete,fanDelete;
+    private Button lightDelete,curtainDelete,fanDelete,
+            addLight,addCurtain,addFan;
 
     private LinearLayout mainLinearLayout;
     private CardView lightCardView,curtainCardView,fanCardView;
+
 
     //风扇图标动态显示
     private final Timer timer = new Timer();
@@ -138,6 +145,19 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
         arrow_down=findViewById(R.id.arrow_down);
         arrow_up=findViewById(R.id.arrow_up);
 
+
+        mainLinearLayout=findViewById(R.id.mainLinearLayout);
+        lightDelete=findViewById(R.id.lightDelete);
+        lightCardView=findViewById(R.id.lightCardView);
+        curtainDelete=findViewById(R.id.curtainDelete);
+        curtainCardView=findViewById(R.id.curtainCardView);
+        fanDelete=findViewById(R.id.fanDelete);
+        fanCardView=findViewById(R.id.fanCardView);
+
+        addCurtain=findViewById(R.id.addCurtain);
+        addFan=findViewById(R.id.addFan);
+        addLight=findViewById(R.id.addLight);
+
         temperature = Integer.parseInt(airCconditioningValue.getText().toString());
 
         //空调按钮调节温度
@@ -176,31 +196,53 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
             }
         });
 
-        mainLinearLayout=findViewById(R.id.mainLinearLayout);
-        lightDelete=findViewById(R.id.lightDelete);
-        lightCardView=findViewById(R.id.lightCardView);
-        curtainDelete=findViewById(R.id.curtainDelete);
-        curtainCardView=findViewById(R.id.curtainCardView);
-        fanDelete=findViewById(R.id.fanDelete);
-        fanCardView=findViewById(R.id.fanCardView);
+        //添加按钮模块
+        addLight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lightCardView.setVisibility(View.VISIBLE);
+                addLight.setVisibility(View.GONE);
+            }
+        });
+        addCurtain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                curtainCardView.setVisibility(View.VISIBLE);
+                addCurtain.setVisibility(View.GONE);
+            }
+        });
+        addFan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fanCardView.setVisibility(View.VISIBLE);
+                addFan.setVisibility(View.GONE);
+            }
+        });
+
+
+        //删除按钮模块
         lightDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 lightCardView.setVisibility(View.GONE);
+                addLight.setVisibility(View.VISIBLE);
             }
         });
         curtainDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 curtainCardView.setVisibility(View.GONE);
+                addCurtain.setVisibility(View.VISIBLE);
             }
         });
         fanDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 fanCardView.setVisibility(View.GONE);
+                addFan.setVisibility(View.VISIBLE);
             }
         });
+
 
     }
 

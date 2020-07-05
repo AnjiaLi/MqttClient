@@ -29,6 +29,36 @@
             android:textSize="20sp"/>
     </LinearLayout>
         <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="添加客厅灯"
+                android:id="@+id/addLight"
+                android:visibility="invisible">
+
+            </Button>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="添加窗帘"
+                android:id="@+id/addCurtain"
+                android:visibility="invisible">
+
+            </Button>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="添加风扇"
+                android:id="@+id/addFan"
+                android:visibility="invisible">
+
+            </Button>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
