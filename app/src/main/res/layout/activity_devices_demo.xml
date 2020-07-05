@@ -8,7 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/mainLinearLayout">
 
         <LinearLayout
         android:layout_width="wrap_content"
@@ -512,7 +513,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp"
-            app:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp"
+            android:id="@+id/lightCardView"
+            android:visibility="visible">
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -536,12 +539,28 @@
 
                 </LinearLayout>
 
-                <Switch
-                    android:id="@+id/parlour_light_switch"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:textSize="20sp"/>
+                    android:orientation="vertical"
+                    android:layout_gravity="end">
+                    <Button
+                        android:id="@+id/lightDelete"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/delete"
+                        android:layout_gravity="end"
+                        android:layout_margin="5dp"/>
+                    <Switch
+                        android:id="@+id/parlour_light_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+
+
             </FrameLayout>
 
 
@@ -553,7 +572,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp"
-            app:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp"
+            android:id="@+id/curtainCardView"
+            android:visibility="visible">
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -574,12 +595,26 @@
                         android:textSize="20sp"/>
                 </LinearLayout>
 
-                <Switch
-                    android:id="@+id/curtain_switch"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:textSize="20sp"/>
+                    android:orientation="vertical"
+                    android:layout_gravity="end">
+                    <Button
+                        android:id="@+id/curtainDelete"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/delete"
+                        android:layout_gravity="end"
+                        android:layout_margin="5dp"/>
+                    <Switch
+                        android:id="@+id/curtain_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
             </FrameLayout>
 
         </androidx.cardview.widget.CardView>
@@ -590,7 +625,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp"
-            app:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp"
+            android:id="@+id/fanCardView"
+            android:visibility="visible">
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -612,13 +649,25 @@
                         android:text="风扇:"
                         android:textSize="20sp"/>
                 </LinearLayout>
-
-                <Switch
-                    android:id="@+id/fan_socket_switch"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:textSize="20sp"/>
+                    android:orientation="vertical"
+                    android:layout_gravity="end">
+                    <Button
+                        android:id="@+id/fanDelete"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/delete"
+                        android:layout_gravity="end"
+                        android:layout_margin="5dp"/>
+                    <Switch
+                        android:id="@+id/fan_socket_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:textSize="20sp"/>
+                </LinearLayout>
             </FrameLayout>
 
         </androidx.cardview.widget.CardView>

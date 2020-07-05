@@ -1,6 +1,8 @@
 package com.example.mqttclient;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.widget.NestedScrollView;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -14,7 +16,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -46,7 +50,10 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
 
     private Button arrow_down,arrow_up;
 
+    private Button lightDelete,curtainDelete,fanDelete;
 
+    private LinearLayout mainLinearLayout;
+    private CardView lightCardView,curtainCardView,fanCardView;
 
     //风扇图标动态显示
     private final Timer timer = new Timer();
@@ -168,6 +175,33 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
                 }
             }
         });
+
+        mainLinearLayout=findViewById(R.id.mainLinearLayout);
+        lightDelete=findViewById(R.id.lightDelete);
+        lightCardView=findViewById(R.id.lightCardView);
+        curtainDelete=findViewById(R.id.curtainDelete);
+        curtainCardView=findViewById(R.id.curtainCardView);
+        fanDelete=findViewById(R.id.fanDelete);
+        fanCardView=findViewById(R.id.fanCardView);
+        lightDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lightCardView.setVisibility(View.GONE);
+            }
+        });
+        curtainDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                curtainCardView.setVisibility(View.GONE);
+            }
+        });
+        fanDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fanCardView.setVisibility(View.GONE);
+            }
+        });
+
     }
 
     @Override
