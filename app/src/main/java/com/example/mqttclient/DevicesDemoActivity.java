@@ -69,7 +69,7 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
             handler.postDelayed(this, 100);
         }
     };
-    
+
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
