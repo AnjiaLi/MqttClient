@@ -325,7 +325,7 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
                     door_status_image.setImageResource(R.drawable.close);
                 }
                 break;
-
+                //新增检测CO2浓度等功能
             case 6:
                 carbonDioxideValue.setText(String.valueOf(gson.fromJson(message.trim(), IntMessage.class).value));
                 break;
