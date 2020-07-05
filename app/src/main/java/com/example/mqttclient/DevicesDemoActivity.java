@@ -46,10 +46,12 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
 
     private Button arrow_down,arrow_up;
 
+
+
+    //风扇图标动态显示
     private final Timer timer = new Timer();
     int count=0;
     int temperature=25;
-
     TimerTask timerTask = new TimerTask() {
         @Override
         public void run() {
@@ -59,8 +61,6 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
     };
 
     Handler handler=new Handler();
-
-
     Runnable runnable=new Runnable() {
         @Override
         public void run() {
@@ -69,6 +69,7 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
             handler.postDelayed(this, 100);
         }
     };
+    
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
