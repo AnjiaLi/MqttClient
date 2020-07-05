@@ -133,7 +133,7 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
 
         temperature = Integer.parseInt(airCconditioningValue.getText().toString());
 
-
+        //空调按钮调节温度
         arrow_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,7 +151,6 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
                 }
             }
         });
-
         arrow_down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
