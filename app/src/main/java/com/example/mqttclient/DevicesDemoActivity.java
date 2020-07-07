@@ -42,7 +42,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class DevicesDemoActivity extends AppCompatActivity implements MqttService.MqttEventCallBack, CompoundButton.OnCheckedChangeListener {
-
+    //demo
     private TextView connectState, temperatureValue, humidityValue, pmValue, carbonDioxideValue,
             gasValue, waterTowerValue, illuminanceValue , doorStatus, peopleStatus, windowStatus;
     private EditText airCconditioningValue;
@@ -286,7 +286,8 @@ public class DevicesDemoActivity extends AppCompatActivity implements MqttServic
                         mqttBinder.publishMessage("/test/fan1",
                                 new Gson().toJson(new BoolMessage(true)));
 
-                        handler.postDelayed(runnable, 100);//每两秒执行一次runnable.
+                        //打开开关后，启动定时器的任务
+                        handler.postDelayed(runnable, 100);
 
 
                     } else {

@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements MqttService.MqttE
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = new Intent(MainActivity.this, DevicesDemoActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(MainActivity.this, DevicesDemoActivity.class);
+//        startActivity(intent);
 
 
         connectState = findViewById(R.id.connect_state);
